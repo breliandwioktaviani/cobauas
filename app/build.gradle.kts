@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.cobauas"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.cobauas"
