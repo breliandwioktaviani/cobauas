@@ -17,22 +17,21 @@
             android:layout_gravity="center_horizontal"/>
 
         <EditText
-            android:id="@+id/etJumlah"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Jumlah Uang"
-            android:inputType="numberDecimal"
-            android:padding="10dp"
-            android:background="@drawable/bg_edittext"/>
-
-        <EditText
             android:id="@+id/etKeterangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Keterangan (misal: beli makan)"
             android:layout_marginTop="12dp"
-            android:padding="10dp"
-            android:background="@drawable/bg_edittext"/>
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/etJumlah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Jumlah Uang"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
 
         <RadioGroup
             android:id="@+id/rgJenis"
