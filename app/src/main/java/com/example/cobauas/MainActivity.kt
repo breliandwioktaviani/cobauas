@@ -33,8 +33,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getMotor(): List<Motor>{
+
         return listOf(
             Motor("Vario","13 november", status.akan_datang),
+            Motor("Supra","13 november", status.selesai),
+            Motor("Supra","13 november", status.selesai),
+            Motor("Supra","13 november", status.selesai),
+            Motor("Supra","13 november", status.selesai),
             Motor("Supra","13 november", status.selesai)
         )
     }
