@@ -82,7 +82,7 @@
         android:layout_below="@id/headerLayout"
         android:background="@drawable/bg_card_top"
         android:orientation="vertical"
-        android:paddingTop="60dp">
+        android:paddingTop="30dp">
 
         <!-- Navigasi -->
         <LinearLayout
@@ -153,12 +153,12 @@
 
                 <EditText
                     android:id="@+id/tvMerk"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Merk kendaraan" />
 
                 <!-- Jenis -->
                 <TextView
@@ -171,12 +171,12 @@
 
                 <EditText
                     android:id="@+id/tvJenis"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Jenis kendaraan" />/>
 
                 <!-- Nomor -->
                 <TextView
@@ -190,12 +190,12 @@
 
                 <EditText
                     android:id="@+id/tvNomor"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Nomor kendaraan" />/>
 
                 <!-- Terakhir -->
                 <TextView
@@ -208,12 +208,12 @@
 
                 <EditText
                     android:id="@+id/tvTerakhir"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Tanggal Terakhir Servis" />/>
 
                 <!-- Selanjutnya -->
                 <TextView
@@ -226,12 +226,12 @@
 
                 <EditText
                     android:id="@+id/tvSelanjutnya"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Tanggal Servis Selanjutnya" />/>
 
                 <!-- Catatan -->
                 <TextView
@@ -244,12 +244,12 @@
 
                 <EditText
                     android:id="@+id/tvCatatan"
-                    android:enabled="false"
                     android:background="@drawable/field_bg"
                     android:padding="10dp"
                     android:backgroundTint="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Catatan (Opsional)" />/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -281,6 +281,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="10dp"/>
+
 
                 </LinearLayout>
 

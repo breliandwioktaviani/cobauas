@@ -1,10 +1,14 @@
 package com.example.cobauas
 
 data class Motor(
-    val nama:String,
-    val service : String,
-    var status : status
+    val merk: String,
+    val jenis: String,
+    val nomor: String,
+    val terakhir: String,
+    val selanjutnya: String,
+    val status: status
 )
+
 
 data class Riwayat(
     val nama:String,

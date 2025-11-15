@@ -21,8 +21,8 @@ import android.widget.TextView
 
      override fun onBindViewHolder(holder: MotorViewHolder, position: Int) {
          val motor = ListMotor[position]
-         holder.nama.text = motor.nama
-         holder.service.text = motor.service
+         holder.nama.text = motor.jenis
+         holder.service.text = motor.selanjutnya
          holder.status.text = motor.status.name
 
          if (motor.status == status.akan_datang) {
@@ -35,13 +35,16 @@ import android.widget.TextView
              val context = holder.itemView.context
              val intent = Intent(context, cekdetail::class.java)
 
-             // Mengirim data motor
-             intent.putExtra("nama", motor.nama)
-             intent.putExtra("service", motor.service)
-             intent.putExtra("status", holder.status.text.toString())
+             intent.putExtra("merk", motor.merk)
+             intent.putExtra("jenis", motor.jenis)
+             intent.putExtra("nomor", motor.nomor)
+             intent.putExtra("terakhir", motor.terakhir)
+             intent.putExtra("selanjutnya", motor.selanjutnya)
+             intent.putExtra("status", motor.status.name)
 
              context.startActivity(intent)
          }
+
 
 
      }

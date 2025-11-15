@@ -2,7 +2,6 @@ package com.example.cobauas
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -13,42 +12,53 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+
+    private val motorList = mutableListOf<Motor>()
+    private lateinit var recycler: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        var username = intent.getStringExtra(Login.Username)
-        val textUsername = findViewById<TextView>(R.id.tvName)
-        textUsername.text = username
+        recycler = findViewById(R.id.recycler)
+        recycler.layoutManager = LinearLayoutManager(this)
 
-        val recylerView = findViewById<RecyclerView>(R.id.recycler)
+        // Tidak ada getMotor()
+        recycler.adapter = MotorAdapter(motorList)
 
         val btnTambah = findViewById<ImageView>(R.id.fabAdd)
         btnTambah.setOnClickListener {
-            val intent  = Intent (this, tambahriwayat::class.java)
-            startActivity(intent)
+            val intent = Intent(this, tambahriwayat::class.java)
+            startActivityForResult(intent, 1)
         }
-
-        recylerView.layoutManager = LinearLayoutManager(this)
-        recylerView.adapter = MotorAdapter(getMotor())
-
     }
 
-    fun getMotor(): List<Motor>{
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-        return listOf(
-            Motor("Vario","13 november", status.akan_datang),
-            Motor("Supra","13 november", status.selesai),
-            Motor("Supra","13 november", status.selesai),
-            Motor("Supra","13 november", status.selesai),
-            Motor("Supra","13 november", status.selesai),
-            Motor("Supra","13 november", status.selesai)
-        )
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+
+            val nama = data?.getStringExtra("nama") ?: ""
+            val tanggal = data?.getStringExtra("tanggal") ?: ""
+            val jenis = data?.getStringExtra("service") ?: ""
+            val nomor = data?.getStringExtra("nomor") ?: ""
+            val selanjutnya = data?.getStringExtra("selanjutnya") ?: ""
+
+
+            val statusMotor = if (data?.getStringExtra("status") == "selesai") status.selesai else status.akan_datang
+
+            motorList.add(
+                Motor(
+                    merk = nama,
+                    jenis = jenis,
+                    nomor = nomor,
+                    terakhir = tanggal,
+                    selanjutnya = selanjutnya,
+                    status = statusMotor
+                )
+            )
+
+            recycler.adapter?.notifyDataSetChanged()
+        }
     }
 }
