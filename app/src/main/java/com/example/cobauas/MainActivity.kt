@@ -1,13 +1,12 @@
 package com.example.cobauas
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -19,11 +18,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val intent = Intent(this, NotifReceiver::class.java).apply {
+            putExtra("judul", "Tes Notifikasi")
+            putExtra("pesan", "Awa Hytam")
+        }
+
+        sendBroadcast(intent)
+
+        // 🔥 WAJIB — Buat channel notifikasi
+        buatChannel()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 1)
+        }
 
         recycler = findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(this)
-
-        // Tidak ada getMotor()
         recycler.adapter = MotorAdapter(motorList)
 
         val btnTambah = findViewById<ImageView>(R.id.fabAdd)
@@ -44,8 +53,10 @@ class MainActivity : AppCompatActivity() {
             val nomor = data?.getStringExtra("nomor") ?: ""
             val selanjutnya = data?.getStringExtra("selanjutnya") ?: ""
 
-
-            val statusMotor = if (data?.getStringExtra("status") == "selesai") status.selesai else status.akan_datang
+            val statusMotor = if (data?.getStringExtra("status") == "selesai")
+                status.selesai
+            else
+                status.akan_datang
 
             motorList.add(
                 Motor(
@@ -59,6 +70,20 @@ class MainActivity : AppCompatActivity() {
             )
 
             recycler.adapter?.notifyDataSetChanged()
+        }
+    }
+
+
+    private fun buatChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                "service_channel",
+                "Pengingat Service Motor",
+                NotificationManager.IMPORTANCE_HIGH
+            )
+
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
         }
     }
 }
