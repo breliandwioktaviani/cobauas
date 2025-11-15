@@ -1,5 +1,5 @@
 package com.example.cobauas
-
+import com.example.cobauas.Tambahriwayat
 import android.app.AlarmManager
 import android.app.DatePickerDialog
 import android.app.PendingIntent
@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.Calendar
 
-class tambahriwayat : AppCompatActivity() {
+class Tambahriwayat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

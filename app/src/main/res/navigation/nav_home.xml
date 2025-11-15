@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/EdukasiFragment">
+
+    <fragment
+        android:id="@+id/EdukasiFragment"
+        android:name="com.example.cobauas.home.EdukasiFragment"
+        android:label="fragment_edukasi"
+        tools:layout="@layout/fragment_edukasi" />
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.cobauas.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/RiwayatFragment"
+        android:name="com.example.cobauas.home.RiwayatFragment"
+        android:label="fragment_riwayat"
+        tools:layout="@layout/fragment_riwayat" />
+</navigation>

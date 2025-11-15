@@ -98,10 +98,10 @@
                 android:id="@+id/btnBeranda"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:backgroundTint="#B3CFE5"
+                android:backgroundTint="#1A3C63"
                 android:text="Beranda"
-                android:textColor="#1A3C63"
-                android:layout_marginEnd="12dp" />
+                android:layout_marginEnd="12dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:id="@+id/btnRiwayat"
@@ -113,12 +113,13 @@
                 android:layout_marginEnd="12dp" />
 
             <Button
-                android:id="@+id/btnDetail"
+                android:id="@+id/btnEdukasi"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:backgroundTint="#1A3C63"
-                android:text="Detail"
-                android:textColor="@android:color/white"/>
+                android:backgroundTint="#B3CFE5"
+                android:text="Edukasi"
+                android:textColor="#1A3C63"/>
+
         </LinearLayout>
 
         <!-- CARD DETAIL -->

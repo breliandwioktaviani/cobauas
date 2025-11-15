@@ -62,7 +62,7 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-<!---->
+            <!---->
 
             <ImageView
                 android:id="@+id/imgSettings"
@@ -117,9 +117,9 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:elevation="8dp"
-            android:backgroundTint="#1A3C63"
+            android:backgroundTint="#B3CFE5"
+            android:textColor="#1A3C63"
             android:text="Beranda"
-            android:textColor="@android:color/white"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:layout_marginEnd="12dp" />
@@ -129,9 +129,9 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:elevation="2dp"
-            android:backgroundTint="#B3CFE5"
+            android:backgroundTint="#1A3C63"
             android:text="Riwayat"
-            android:textColor="#1A3C63"
+            android:textColor="@android:color/white"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:layout_marginEnd="12dp" />
@@ -154,19 +154,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/navButtons"
-        android:layout_above="@id/fabAdd"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
         android:padding="8dp"/>
 
 
-    <ImageView
-        android:id="@+id/fabAdd"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/add"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:elevation="10dp" />
 </RelativeLayout>

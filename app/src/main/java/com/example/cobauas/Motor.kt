@@ -10,7 +10,7 @@ data class Motor(
 )
 
 
-data class Riwayat(
+data class TambahRiwayat(
     val nama:String,
     var status: status
 )
