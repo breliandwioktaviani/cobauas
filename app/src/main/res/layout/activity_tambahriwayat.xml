@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A3C63">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_card_maintop"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/userInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="User Profile Icon"
+                android:src="@drawable/account_circle" />
+
+            <LinearLayout
+                android:layout_width="219dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat datang"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adi Nugroho"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/settings" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userInfoLayout"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"
+            android:lineSpacingExtra="2dp"
+            android:text="Selamat datang\nhati-hati ya... Soalnya aplikasi ini bisa bikin kamu nyaman dan susah move on~"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <!-- CONTENT CARD -->
+    <LinearLayout
+        android:id="@+id/contentCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:background="@drawable/bg_card_top"
+        android:orientation="vertical"
+        android:paddingTop="60dp">
+
+        <!-- Navigasi -->
+        <LinearLayout
+            android:id="@+id/navButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnBeranda"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:backgroundTint="#B3CFE5"
+                android:text="Beranda"
+                android:textColor="#1A3C63"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/btnRiwayat"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:backgroundTint="#B3CFE5"
+                android:text="Riwayat"
+                android:textColor="#1A3C63"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/btnDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:backgroundTint="#1A3C63"
+                android:text="Detail"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- CARD DETAIL -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/field_bg"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Jadwal Baru"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A3C63"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Merk -->
+                <TextView android:text="Merk Kendaraan"
+                    android:textColor="#1A3C63"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvMerk"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Jenis -->
+                <TextView
+                    android:text="Jenis Kendaraan"
+                    android:textColor="#1A3C63"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvJenis"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Nomor -->
+                <TextView
+                    android:text="Nomor kendaraan"
+                    android:textColor="#1A3C63"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvNomor"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Terakhir -->
+                <TextView
+                    android:text="Terakhir servis"
+                    android:textColor="#1A3C63"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvTerakhir"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Selanjutnya -->
+                <TextView
+                    android:text="Servis Selanjutnya"
+                    android:textColor="#1A3C63"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvSelanjutnya"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Catatan -->
+                <TextView
+                    android:text="Catatan (Opsional)"
+                    android:textColor="#1A3C63"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/tvCatatan"
+                    android:enabled="false"
+                    android:background="@drawable/field_bg"
+                    android:padding="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/btnKembali"
+                        android:text="Kembali"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/btn_rounded"
+                        android:textColor="#FFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/btnSimpan"
+                        android:text="Simpan"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/btn_rounded"
+                        android:textColor="#FFF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

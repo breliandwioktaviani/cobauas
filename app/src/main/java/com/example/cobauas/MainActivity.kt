@@ -1,7 +1,9 @@
 package com.example.cobauas
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         textUsername.text = username
 
         val recylerView = findViewById<RecyclerView>(R.id.recycler)
+
+        val btnTambah = findViewById<ImageView>(R.id.fabAdd)
+        btnTambah.setOnClickListener {
+            val intent  = Intent (this, tambahriwayat::class.java)
+            startActivity(intent)
+        }
 
         recylerView.layoutManager = LinearLayoutManager(this)
         recylerView.adapter = MotorAdapter(getMotor())

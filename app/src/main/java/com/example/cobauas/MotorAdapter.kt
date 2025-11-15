@@ -1,5 +1,6 @@
 package com.example.cobauas
 
+import android.content.Intent
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.TextView
         val nama = row.findViewById<TextView>(R.id.nama)
         val service = row.findViewById<TextView>(R.id.service)
         val status = row.findViewById<TextView>(R.id.status)
+        val cekdetail = row.findViewById<TextView>(R.id.tvJumlah)
     }
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): MotorViewHolder{
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_data,parent,false)
@@ -27,6 +29,18 @@ import android.widget.TextView
              holder.status.text = "akan datang"
          } else {
              holder.status.text = "selesai"
+         }
+
+         holder.cekdetail.setOnClickListener {
+             val context = holder.itemView.context
+             val intent = Intent(context, cekdetail::class.java)
+
+             // Mengirim data motor
+             intent.putExtra("nama", motor.nama)
+             intent.putExtra("service", motor.service)
+             intent.putExtra("status", holder.status.text.toString())
+
+             context.startActivity(intent)
          }
 
 
