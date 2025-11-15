@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,11 +36,32 @@ class MainActivity : AppCompatActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = MotorAdapter(motorList)
 
+
         val btnTambah = findViewById<ImageView>(R.id.fabAdd)
         btnTambah.setOnClickListener {
-            val intent = Intent(this, tambahriwayat::class.java)
+            val intent = Intent(this, Tambahriwayat::class.java)
             startActivityForResult(intent, 1)
         }
+
+        // Ambil data username kalau diperlukan
+
+        val btnBeranda = findViewById<Button>(R.id.btnBeranda)
+        val btnRiwayat = findViewById<Button>(R.id.btnRiwayat)
+
+            // Beranda (halaman ini) → Tidak perlu pindah
+        btnBeranda.setOnClickListener {
+            // kosong karena sudah di halaman ini
+        }
+
+            // Klik Riwayat → pindah halaman RiwayatActivity
+        btnRiwayat.setOnClickListener {
+            val go = Intent(this, Riwayatt::class.java)
+            startActivity(go)
+        }
+
+            // Klik Edukasi → pindah ke EdukasiActivity
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

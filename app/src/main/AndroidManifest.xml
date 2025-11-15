@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +15,25 @@
         android:theme="@style/Theme.Cobauas"
         tools:targetApi="31">
         <activity
-            android:name=".tambahriwayat"
+            android:name=".Riwayatt"
             android:exported="false" />
-        <receiver android:name=".NotifReceiver"
-            android:exported="true"/>
+        <activity
+            android:name=".riwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Riwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Tambahriwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Tambahriwayat"
+            android:exported="false" />
+
+        <receiver
+            android:name=".NotifReceiver"
+            android:exported="true" />
+
         <activity
             android:name=".cekdetail"
             android:exported="false" />
@@ -34,7 +51,5 @@
             android:name=".MainActivity"
             android:exported="true" />
     </application>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
 
 </manifest>
