@@ -77,7 +77,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:contentDescription="Settings Icon"
-                    app:srcCompat="@drawable/settings" />
+                    app:srcCompat="@drawable/logout" />
             </LinearLayout>
 
             <TextView
@@ -104,54 +104,6 @@
             android:paddingTop="60dp"/>
 
 
-        <LinearLayout
-            android:id="@+id/navButtons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/contentCard"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:clipToPadding="false"
-            android:clipChildren="false">
-
-            <Button
-                android:id="@+id/btnBeranda"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="8dp"
-                android:backgroundTint="#B3CFE5"
-                android:textColor="#1A3C63"
-                android:text="Beranda"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginEnd="12dp" />
-
-            <Button
-                android:id="@+id/btnRiwayat"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="2dp"
-                android:backgroundTint="#1A3C63"
-                android:text="Riwayat"
-                android:textColor="@android:color/white"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginEnd="12dp" />
-
-            <Button
-                android:id="@+id/btnEdukasi"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="2dp"
-                android:backgroundTint="#B3CFE5"
-                android:text="Edukasi"
-                android:textColor="#1A3C63"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"

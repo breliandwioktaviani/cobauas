@@ -61,11 +61,6 @@ class HomeFragment : Fragment() {
             startActivityForResult(intent, 1)
         }
 
-        // Tombol Riwayat
-        view.findViewById<Button>(R.id.btnRiwayat).setOnClickListener {
-            val go = Intent(requireContext(), Riwayatt::class.java)
-            startActivity(go)
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
