@@ -103,13 +103,11 @@
             android:orientation="vertical"
             android:paddingTop="60dp"/>
 
-
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/navButtons"
+            android:layout_below="@id/headerLayout"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="20dp"
             android:padding="8dp"/>
