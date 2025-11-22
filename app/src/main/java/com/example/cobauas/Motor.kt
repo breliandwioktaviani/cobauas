@@ -1,12 +1,22 @@
 package com.example.cobauas
 
 data class Motor(
+    val merk: String,
+    val jenis: String,
+    val nomor: String,
+    val terakhir: String,
+    val selanjutnya: String,
+    val status: status
+)
+
+
+data class TambahRiwayat(
     val nama:String,
-    val service : String,
-    var status : status
+    var status: status
 )
 
 enum class status{
     selesai,
     akan_datang
 }
+

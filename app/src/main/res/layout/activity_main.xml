@@ -66,14 +66,13 @@
 
             <ImageView
                 android:id="@+id/imgSettings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="12dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:contentDescription="Settings Icon"
-                android:minWidth="40dp"
-                android:layout_marginTop="5dp"
-                android:minHeight="40dp"
+
                 app:srcCompat="@drawable/settings" />
         </LinearLayout>
 
@@ -138,12 +137,12 @@
             android:layout_marginEnd="12dp" />
 
         <Button
-            android:id="@+id/btnDetail"
+            android:id="@+id/btnEdukasi"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:elevation="2dp"
             android:backgroundTint="#B3CFE5"
-            android:text="Detail"
+            android:text="Edukasi"
             android:textColor="#1A3C63"
             android:paddingStart="20dp"
             android:paddingEnd="20dp" />
