@@ -10,7 +10,6 @@ class cekdetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cekdetail)
 
-        // Ambil data dari Intent
         val merk = intent.getStringExtra("merk")
         val jenis = intent.getStringExtra("jenis")
         val nomor = intent.getStringExtra("nomor")

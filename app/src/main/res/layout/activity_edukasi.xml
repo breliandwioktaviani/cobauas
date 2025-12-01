@@ -39,6 +39,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/judulData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cara Mengganti Oli Mesin"
@@ -48,7 +49,7 @@
                     android:layout_marginBottom="12dp" />
 
                 <TextView
-                    android:id="@+id/tvContent"
+                    android:id="@+id/deskripsiData"
                     android:layout_width="300dp"
                     android:layout_height="455dp"
                     android:lineSpacingExtra="7dp"
