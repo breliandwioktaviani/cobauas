@@ -1,22 +1,21 @@
 package com.example.cobauas
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cobauas.databinding.ActivityEdukasiBinding
 
 class EdukasiActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEdukasiBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEdukasiBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_edukasi)
+        val btnTutup = findViewById<Button>(R.id.TutupBuuton)
 
-        // misal tombol tutup:
-        binding.TutupBuuton.setOnClickListener {
+        btnTutup.setOnClickListener {
             finish()
         }
-
+        }
     }
-}
+

@@ -6,7 +6,7 @@ data class Motor(
     val nomor: String,
     val terakhir: String,
     val selanjutnya: String,
-    val status: status
+    var status: status
 )
 
 

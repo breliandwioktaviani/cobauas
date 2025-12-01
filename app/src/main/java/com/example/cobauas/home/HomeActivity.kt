@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.cobauas.Motor
 import com.example.cobauas.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,6 +26,11 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragmentContainerView)
 
         buttonNavigationView.setupWithNavController(navController )
+    }
+
+
+    companion object {
+        val semuaMotor = mutableListOf<Motor>()
     }
 
 

@@ -95,19 +95,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/headerLayout"
-            android:layout_marginTop="41dp"
-            android:background="@drawable/bg_card_top"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:paddingTop="60dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerEdukasi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/contentCard"
             android:layout_marginTop="20dp"
-            android:padding="8dp"/>
+            android:background="@drawable/bg_card_top"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerEdukasi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp" />
+        </LinearLayout>
+
+
+
 
     </RelativeLayout>
 </FrameLayout>

@@ -79,6 +79,8 @@ class HomeFragment : Fragment() {
             )
 
             motorList.add(motor)
+            MotorData.motorList.add(motor)
+
             recycler.adapter?.notifyDataSetChanged()
         }
     }
