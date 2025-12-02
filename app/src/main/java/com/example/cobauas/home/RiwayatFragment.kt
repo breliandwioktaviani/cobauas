@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,8 +34,16 @@ class RiwayatFragment : Fragment() {
         val btnRiwayatt: Button = view.findViewById(R.id.btnRiwayat)
         val btnEdukasi: Button = view.findViewById(R.id.btnEdukasi)
 
+        val username = arguments?.getString("username")
+        val password = arguments?.getString("password")
 
-
+        val buttonProfilee = view.findViewById<ImageView>(R.id.imgProfile)
+        buttonProfilee.setOnClickListener {
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
+            intent.putExtra("username", username)
+            intent.putExtra("password", password)
+            startActivity(intent)
+        }
 
         val riwayatList = MotorData.motorRiwayat
         motorAdapter = MotorAdapter(riwayatList)
