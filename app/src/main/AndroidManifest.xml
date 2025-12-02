@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permission dari versi terbaru -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
@@ -15,46 +14,57 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cobauas"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Cobauas" />
         <activity
             android:name=".home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.Cobauas">
-        </activity>
-
+            android:theme="@style/Theme.Cobauas" />
         <activity
             android:name=".EdukasiActivity"
             android:exported="false"
             android:label="@string/title_activity_edukasi"
             android:theme="@style/Theme.Cobauas.NoActionBar" />
-
-        <activity android:name=".MainActivity2" android:exported="false" />
-        <activity android:name=".SplashActivity" android:exported="false" />
-
-
-
-        <activity android:name=".Riwayatt" android:exported="false" />
-        <activity android:name=".riwayat" android:exported="false" />
-        <activity android:name=".Riwayat" android:exported="false" />
-        <activity android:name=".Tambahriwayat" android:exported="false" />
-        <activity android:name=".cekdetail" android:exported="false" />
-
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Riwayatt"
+            android:exported="false" />
+        <activity
+            android:name=".riwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Riwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Tambahriwayat"
+            android:exported="false" />
+        <activity
+            android:name=".cekdetail"
+            android:exported="false" />
 
         <receiver
             android:name=".NotifReceiver"
             android:exported="true" />
 
-        <activity android:name=".Login"
+        <activity
+            android:name=".Login"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity" android:exported="true" />
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

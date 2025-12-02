@@ -29,9 +29,11 @@ class Login : AppCompatActivity() {
         button.setOnClickListener {
         val username = email.text.toString()
         val password = password.text.toString()
-            if (username == "Adi" && password == "123") {
+            if (username == "Adi" && password == "123" || username == "awa" && password == "123"
+                || username == "bre" && password == "123") {
                 val inten = Intent(this, HomeActivity::class.java)
                 inten.putExtra(Username,username)
+                inten.putExtra(Password,password)
                 startActivity(inten)
                 Toast.makeText(this, "Login Berhasil" , Toast.LENGTH_SHORT).show()
             } else {
@@ -42,6 +44,7 @@ class Login : AppCompatActivity() {
     }
     companion object KEY{
 const val Username = "username"
+        const val Password = "password"
     }
 
 
