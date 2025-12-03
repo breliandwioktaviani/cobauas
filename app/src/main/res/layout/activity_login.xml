@@ -38,21 +38,24 @@
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
-
+                android:background="@drawable/loginbg"
                 android:hint="Email"
-                android:paddingStart="16dp" />
-
+                android:drawableStart="@drawable/username"
+                android:drawablePadding="12dp"
+                android:paddingStart="1dp" />
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
-
+                android:background="@drawable/loginbg"
                 android:hint="Kata sandi"
                 android:inputType="textPassword"
-                android:paddingStart="16dp" />
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="12dp"
+                android:paddingStart="1dp" />
 
 
             <Button

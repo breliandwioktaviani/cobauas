@@ -1,5 +1,4 @@
 package com.example.cobauas.home
-import com.example.cobauas.Tambahriwayat
 import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cobauas.*
 import com.example.cobauas.R
+import com.example.cobauas.Tambahriwayat
 
 class HomeFragment : Fragment() {
 
@@ -31,28 +31,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        // NOTIF
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                "service_channel",
-                "Pengingat Service Motor",
-                NotificationManager.IMPORTANCE_HIGH
-            )
 
-            val manager = requireContext().getSystemService(NotificationManager::class.java)
-            manager.createNotificationChannel(channel)
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            requireActivity().requestPermissions(
-                arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 1
-            )
-        }
 
         // Recycler
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = MotorAdapter(motorList)
+        recycler.adapter = MotorAdapter(motorList,"HOME")
 
         // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
@@ -79,6 +63,8 @@ class HomeFragment : Fragment() {
             )
 
             motorList.add(motor)
+            MotorData.motorList.add(motor)
+
             recycler.adapter?.notifyDataSetChanged()
         }
     }

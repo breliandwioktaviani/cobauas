@@ -42,7 +42,7 @@
                     android:id="@+id/judulData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cara Mengganti Oli Mesin"
+                    android:text="Tips singkat rawat motor"
                     android:textStyle="bold"
                     android:textColor="#1A3C63"
                     android:textSize="16sp"
@@ -50,22 +50,17 @@
 
                 <TextView
                     android:id="@+id/deskripsiData"
-                    android:layout_width="300dp"
-                    android:layout_height="455dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:lineSpacingExtra="7dp"
-                    android:text="1. Siapkan peralatan: oli baru sesuai rekomendasi, kunci ring/sok, wadah oli bekas, lap, corong.\n
-2. Panaskan mesin 2–3 menit agar oli lebih encer.\n
-3. Matikan mesin, pastikan motor berdiri tegak dengan stand tengah.\n
-4. Buka tutup pengisian oli di atas mesin.\n
-5. Buka baut pembuangan oli, biarkan oli mengalir habis ke wadah penampung.\n
-6. Bersihkan dan pasang kembali baut pembuangan dengan kencang.\n
-7. Tuang oli baru sesuai kapasitas mesin.\n
-8. Hidupkan mesin sebentar, lalu matikan dan cek level oli.\n
-9. Ganti oli rutin 2.000–3.000 km.\n
-10. Jangan mencampur oli berbeda viskositas.\n
-11. Buang oli bekas di tempat yang menerima limbah oli."
+                    android:text="1. Cek oli mesin, air radiator, dan tekanan ban.\n
+2. Ganti oli dan filter agar mesin tetap halus\n
+3. Periksa sistem rem: kampas, minyak rem, dan cakram.\n
+4. Cek kelistrikan: aki, lampu, dan kabel.\n
+5. Lakukan uji jalan untuk memastikan semuanya normal\n"
                     android:textColor="#333333"
                     android:textSize="16sp" />
+
 
             </LinearLayout>
 
