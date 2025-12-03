@@ -21,6 +21,10 @@ class ProfileActivity : AppCompatActivity() {
         val usernameProfile = findViewById<TextView>(R.id.usernameProfile)
         val passwordProfile = findViewById<TextView>(R.id.passwordProfile)
 
+        val buttonBack = findViewById<TextView>(R.id.back)
+        buttonBack.setOnClickListener{
+            finish()
+        }
         val username = intent.getStringExtra(Login.Username)
         val password = intent.getStringExtra(Login.Password)
 

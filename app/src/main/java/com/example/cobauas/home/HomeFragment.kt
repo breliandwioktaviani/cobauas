@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         // Recycler
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = MotorAdapter(motorList)
+        recycler.adapter = MotorAdapter(motorList,"HOME")
 
         // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)

@@ -46,7 +46,7 @@ class RiwayatFragment : Fragment() {
         }
 
         val riwayatList = MotorData.motorRiwayat
-        motorAdapter = MotorAdapter(riwayatList)
+        motorAdapter = MotorAdapter(riwayatList,"RIWAYAT")
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = motorAdapter
 
