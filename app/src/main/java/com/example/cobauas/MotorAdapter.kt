@@ -9,6 +9,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import android.view.ContextThemeWrapper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
 
 class MotorAdapter(
     val ListMotor: MutableList<Motor>,
@@ -58,7 +59,24 @@ class MotorAdapter(
                             true
                         }
 
-                        R.id.menu_edit -> true
+                        R.id.menu_edit -> {
+                            val intent = Intent(holder.itemView.context, EditMotor::class.java)
+
+                            intent.putExtra("position", position)
+                            intent.putExtra("merk", motor.merk)
+                            intent.putExtra("jenis", motor.jenis)
+                            intent.putExtra("nomor", motor.nomor)
+                            intent.putExtra("terakhir", motor.terakhir)
+                            intent.putExtra("selanjutnya", motor.selanjutnya)
+                            intent.putExtra("catatan", motor.catatan)
+
+                            (holder.itemView.context as AppCompatActivity)
+                                .startActivityForResult(intent, 200)
+
+                            true
+                        }
+
+
 
                         R.id.menu_delete -> {
                             ListMotor.removeAt(position)

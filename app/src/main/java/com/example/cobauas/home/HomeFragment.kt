@@ -19,7 +19,7 @@ import com.example.cobauas.Tambahriwayat
 
 class HomeFragment : Fragment() {
 
-    private val motorList = mutableListOf<Motor>()
+
     private lateinit var recycler: RecyclerView
 
     override fun onCreateView(
@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         // Recycler
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = MotorAdapter(motorList,"HOME")
+        recycler.adapter = MotorAdapter(MotorData.motorList, "HOME")
 
         // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
@@ -58,14 +58,18 @@ class HomeFragment : Fragment() {
                 nomor = data?.getStringExtra("nomor") ?: "",
                 terakhir = data?.getStringExtra("tanggal") ?: "",
                 selanjutnya = data?.getStringExtra("selanjutnya") ?: "",
+                catatan = data?.getStringExtra("catatan") ?: "",
                 status = if (data?.getStringExtra("status") == "selesai")
                     status.selesai else status.akan_datang
             )
 
-            motorList.add(motor)
             MotorData.motorList.add(motor)
-
             recycler.adapter?.notifyDataSetChanged()
         }
     }
+    override fun onResume() {
+        super.onResume()
+        recycler.adapter?.notifyDataSetChanged()
+    }
+
 }
