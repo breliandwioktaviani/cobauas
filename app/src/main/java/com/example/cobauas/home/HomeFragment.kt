@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,7 @@ import com.example.cobauas.*
 import com.example.cobauas.R
 import com.example.cobauas.Tambahriwayat
 
-class HomeFragment : Fragment() {
+class gHomeFragment : Fragment() {
 
 
     private lateinit var recycler: RecyclerView
@@ -36,7 +37,8 @@ class HomeFragment : Fragment() {
         // Recycler
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = MotorAdapter(MotorData.motorList, "HOME")
+        val savedList = pref.loadMotorList(requireContext())
+        recycler.adapter = MotorAdapter(savedList, "HOME")
 
         // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
@@ -63,7 +65,10 @@ class HomeFragment : Fragment() {
                     status.selesai else status.akan_datang
             )
 
-            MotorData.motorList.add(motor)
+            val list = pref.loadMotorList(requireContext())
+            list.add(motor)
+            pref.saveMotorList(requireContext(), list)
+
             recycler.adapter?.notifyDataSetChanged()
         }
     }

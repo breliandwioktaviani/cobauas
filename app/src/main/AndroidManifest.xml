@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Cobauas"
         tools:targetApi="31">
         <activity
+            android:name=".pref"
+            android:exported="false" />
+        <activity
             android:name=".EditMotor"
             android:exported="false" />
         <activity
@@ -36,7 +39,6 @@
         <activity
             android:name=".SplashActivity"
             android:exported="false" />
-
         <activity
             android:name=".Tambahriwayat"
             android:exported="false" />
