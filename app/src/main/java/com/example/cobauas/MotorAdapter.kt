@@ -15,6 +15,7 @@ class MotorAdapter(
     val ListMotor: MutableList<Motor>,
     val pageType: String
 ) : RecyclerView.Adapter<MotorAdapter.MotorViewHolder>() {
+    var onEditClick: ((Motor, Int) -> Unit)? = null
 
     class MotorViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val nama = row.findViewById<TextView>(R.id.nama)
@@ -39,7 +40,7 @@ class MotorAdapter(
             val wrapper = ContextThemeWrapper(view.context, R.style.MyPopupMenuStyle)
             val popup = PopupMenu(wrapper, view)
 
-            // MENU SESUAI HALAMAN
+
             if (pageType == "HOME") {
                 popup.menuInflater.inflate(R.menu.menu_motor, popup.menu)
             } else {
@@ -60,19 +61,7 @@ class MotorAdapter(
                         }
 
                         R.id.menu_edit -> {
-                            val intent = Intent(holder.itemView.context, EditMotor::class.java)
-
-                            intent.putExtra("position", position)
-                            intent.putExtra("merk", motor.merk)
-                            intent.putExtra("jenis", motor.jenis)
-                            intent.putExtra("nomor", motor.nomor)
-                            intent.putExtra("terakhir", motor.terakhir)
-                            intent.putExtra("selanjutnya", motor.selanjutnya)
-                            intent.putExtra("catatan", motor.catatan)
-
-                            (holder.itemView.context as AppCompatActivity)
-                                .startActivityForResult(intent, 200)
-
+                            onEditClick?.invoke(motor, position)
                             true
                         }
 

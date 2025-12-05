@@ -30,10 +30,6 @@ class RiwayatFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recycler)
 
-        val btnBeranda: Button = view.findViewById(R.id.btnBeranda)
-        val btnRiwayatt: Button = view.findViewById(R.id.btnRiwayat)
-        val btnEdukasi: Button = view.findViewById(R.id.btnEdukasi)
-
         val username = arguments?.getString("username")
         val password = arguments?.getString("password")
 
@@ -50,8 +46,6 @@ class RiwayatFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = motorAdapter
 
-        btnBeranda.setOnClickListener {
-            startActivity(Intent(requireContext(), HomeActivity::class.java))
-        }
+
     }
 }
