@@ -76,6 +76,7 @@
                     android:layout_alignParentEnd="true"
                     android:contentDescription="Settings Icon"
                     app:srcCompat="@drawable/logout" />
+
             </LinearLayout>
 
             <TextView

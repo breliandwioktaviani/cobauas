@@ -55,7 +55,7 @@
                         android:id="@+id/tvWelcome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Selamat datang"
+                        android:text="Riwayat Servis"
                         android:textColor="@android:color/white"
                         android:textSize="14sp" />
 
@@ -63,7 +63,7 @@
                         android:id="@+id/tvName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adi Nugroho"
+                        android:text="Catatan Aktivitas"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -79,8 +79,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:contentDescription="Settings Icon"
+                    app:srcCompat="@drawable/logout" />
 
-                    app:srcCompat="@drawable/settings" />
             </LinearLayout>
 
             <TextView
@@ -118,41 +118,6 @@
             android:gravity="center"
             android:clipToPadding="false"
             android:clipChildren="false">
-
-            <Button
-                android:id="@+id/btnBeranda"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="8dp"
-                android:backgroundTint="#B3CFE5"
-                android:textColor="#1A3C63"
-                android:text="Beranda"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginEnd="12dp" />
-
-            <Button
-                android:id="@+id/btnRiwayat"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="2dp"
-                android:backgroundTint="#1A3C63"
-                android:text="Riwayat"
-                android:textColor="@android:color/white"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginEnd="12dp" />
-
-            <Button
-                android:id="@+id/btnEdukasi"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:elevation="2dp"
-                android:backgroundTint="#B3CFE5"
-                android:text="Edukasi"
-                android:textColor="#1A3C63"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
 
         </LinearLayout>
 
