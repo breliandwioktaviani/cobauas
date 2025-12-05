@@ -9,17 +9,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.cobauas.Tambahriwayat
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cobauas.*
 import com.example.cobauas.R
-import com.example.cobauas.Tambahriwayat
+
 
 class HomeFragment : Fragment() {
 
-
+    private lateinit var adapter: MotorAdapter
     private lateinit var recycler: RecyclerView
 
     override fun onCreateView(
@@ -31,13 +32,32 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+         adapter = MotorAdapter(MotorData.motorList, "HOME")
+
 
 
         // Recycler
         recycler = view.findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = MotorAdapter(MotorData.motorList, "HOME")
+        recycler.adapter = adapter
 
+        adapter.onEditClick = { motor, pos ->
+            val intent = Intent(requireContext(), EditMotor::class.java)
+            intent.putExtra("position", pos)
+            intent.putExtra("merk", motor.merk)
+            intent.putExtra("jenis", motor.jenis)
+            intent.putExtra("nomor", motor.nomor)
+            intent.putExtra("terakhir", motor.terakhir)
+            intent.putExtra("selanjutnya", motor.selanjutnya)
+            intent.putExtra("catatan", motor.catatan)
+
+            startActivityForResult(intent, 2)
+        }
+        val buttonLogout = view.findViewById<ImageView>(R.id.Logout)
+        buttonLogout.setOnClickListener {
+            val intent = Intent(requireContext(),Login::class.java)
+            startActivity(intent)
+        }
         // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
         btnTambah.setOnClickListener {
@@ -66,6 +86,25 @@ class HomeFragment : Fragment() {
             MotorData.motorList.add(motor)
             recycler.adapter?.notifyDataSetChanged()
         }
+
+
+
+        if (requestCode == 2 && resultCode == Activity.RESULT_OK) {
+
+            val pos = data?.getIntExtra("position", -1) ?: return
+
+            if (pos != -1) {
+                MotorData.motorList[pos].merk = data?.getStringExtra("merk") ?: ""
+                MotorData.motorList[pos].jenis = data?.getStringExtra("jenis") ?: ""
+                MotorData.motorList[pos].nomor = data?.getStringExtra("nomor") ?: ""
+                MotorData.motorList[pos].terakhir = data?.getStringExtra("terakhir") ?: ""
+                MotorData.motorList[pos].selanjutnya = data?.getStringExtra("selanjutnya") ?: ""
+                MotorData.motorList[pos].catatan = data?.getStringExtra("catatan") ?: ""
+            }
+
+            adapter.notifyDataSetChanged()
+        }
+
     }
     override fun onResume() {
         super.onResume()

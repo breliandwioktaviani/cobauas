@@ -25,7 +25,7 @@ class EditMotor : AppCompatActivity() {
         val btnSimpan = findViewById<TextView>(R.id.btnSimpan)
         val btnKembali = findViewById<TextView>(R.id.btnKembali)
 
-        // === Ambil posisi dari HomeAdapter ===
+
         val pos = intent.getIntExtra("position", -1)
 
         // === SET DATA KE EDIT TEXT (BIAR SUDAH TERISI SAAT EDIT) ===
