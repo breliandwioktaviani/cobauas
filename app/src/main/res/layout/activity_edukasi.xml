@@ -50,8 +50,8 @@
 
                 <TextView
                     android:id="@+id/deskripsiData"
-                    android:layout_width="300dp"
-                    android:layout_height="455dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:lineSpacingExtra="7dp"
                     android:text="1. Siapkan peralatan: oli baru sesuai rekomendasi, kunci ring/sok, wadah oli bekas, lap, corong.\n
 2. Panaskan mesin 2–3 menit agar oli lebih encer.\n

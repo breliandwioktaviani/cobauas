@@ -25,8 +25,8 @@ class ProfileActivity : AppCompatActivity() {
         buttonBack.setOnClickListener{
             finish()
         }
-        val username = intent.getStringExtra(Login.Username)
-        val password = intent.getStringExtra(Login.Password)
+        val username = intent.getStringExtra(Login.KEY_USERNAME)
+        val password = intent.getStringExtra(Login.KEY_PASSWORD)
 
         usernameProfile.text = username
         passwordProfile.text = password

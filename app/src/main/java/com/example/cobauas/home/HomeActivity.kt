@@ -30,8 +30,8 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
         val buttonNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-        val username = intent.getStringExtra(Login.Username)
-        val password = intent.getStringExtra(Login.Password)
+        val username = intent.getStringExtra(Login.KEY_USERNAME)
+        val password = intent.getStringExtra(Login.KEY_PASSWORD)
         val navController = findNavController(R.id.fragmentContainerView)
 
 
@@ -47,8 +47,8 @@ class HomeActivity : AppCompatActivity() {
 
         buttonProfile.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
-            intent.putExtra(Login.Username,username)
-            intent.putExtra(Login.Password,password)
+            intent.putExtra(Login.KEY_USERNAME,username)
+            intent.putExtra(Login.KEY_PASSWORD,password)
             startActivity(intent)
         }
         buttonNavigationView.setupWithNavController(navController )

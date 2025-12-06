@@ -38,6 +38,13 @@ class EdukasiFragment : Fragment() {
                 "Pastikan rutin mengganti oli setiap 2000 km dan cek tekanan ban."
             )
         )
+        edukasiList.add(
+            Edukasi(
+                "Tips servis Rutin",
+                "Pastikan motor anda selalu dalam keadaan optimal"
+            )
+
+        )
 
         // 2️⃣ Set adapter
         val adapter = EdukasiAdapter(edukasiList)

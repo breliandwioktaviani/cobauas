@@ -36,8 +36,16 @@ class RiwayatFragment : Fragment() {
         val buttonProfilee = view.findViewById<ImageView>(R.id.imgProfile)
         buttonProfilee.setOnClickListener {
             val intent = Intent(requireContext(), ProfileActivity::class.java)
-            intent.putExtra("username", username)
-            intent.putExtra("password", password)
+            intent.putExtra(Login.KEY_USERNAME, username)
+            intent.putExtra(Login.KEY_PASSWORD, password)
+            startActivity(intent)
+        }
+
+        val logout = view.findViewById<ImageView>(R.id.Logout)
+
+        logout.setOnClickListener {
+            val intent = Intent(requireContext(), Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
