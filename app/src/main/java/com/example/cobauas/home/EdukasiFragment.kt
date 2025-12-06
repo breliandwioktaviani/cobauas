@@ -1,15 +1,19 @@
 package com.example.cobauas.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cobauas.Edukasi
 import com.example.cobauas.EdukasiAdapter
+import com.example.cobauas.Login
+import com.example.cobauas.ProfileActivity
 import com.example.cobauas.R
 
 class EdukasiFragment : Fragment() {
@@ -36,7 +40,8 @@ class EdukasiFragment : Fragment() {
             Edukasi(
                 "Cara Merawat Motor",
                 "Pastikan rutin mengganti oli setiap 2000 km dan cek tekanan ban."
-            )
+            ),
+
         )
         edukasiList.add(
             Edukasi(
@@ -52,6 +57,17 @@ class EdukasiFragment : Fragment() {
 
         // 3️⃣ Refresh UI
         adapter.notifyDataSetChanged()
+        val buttonProfilee = view.findViewById<ImageView>(R.id.imgProfile)
+        buttonProfilee?.setOnClickListener {
+            val username = HomeActivity.globalUsername
+            val password = HomeActivity.globalPassword
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
+            intent.putExtra(Login.KEY_USERNAME, username)
+            intent.putExtra(Login.KEY_PASSWORD, password)
+            startActivity(intent)
+        }
+
+
     }
 
 }
