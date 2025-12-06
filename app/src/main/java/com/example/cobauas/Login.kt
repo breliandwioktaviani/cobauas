@@ -29,8 +29,8 @@ class Login : AppCompatActivity() {
         button.setOnClickListener {
         val username = email.text.toString()
             val password = passwordField.text.toString()
-            if (username == "Adi" && password == "123" || username == "awa" && password == "123"
-                || username == "bre" && password == "123") {
+            if (username == "Adi" && password == "123" || username == "Awa" && password == "123"
+                || username == "Bre" && password == "123") {
                 val inten = Intent(this, HomeActivity::class.java)
                 inten.putExtra(KEY_USERNAME, username)
                 inten.putExtra(KEY_PASSWORD, password)

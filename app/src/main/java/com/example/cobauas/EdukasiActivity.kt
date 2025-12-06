@@ -13,6 +13,14 @@ class EdukasiActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edukasi)
         val btnTutup = findViewById<Button>(R.id.TutupBuuton)
 
+        val judul = intent.getStringExtra("judul")
+        val detail = intent.getStringExtra("detail")
+
+        val tvJudul = findViewById<TextView>(R.id.judulData)
+        val tvDeskripsi = findViewById<TextView>(R.id.deskripsiData)
+
+        tvJudul.text = judul
+        tvDeskripsi.text = detail
         btnTutup.setOnClickListener {
             finish()
         }

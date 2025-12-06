@@ -42,14 +42,14 @@
             app:layout_constraintVertical_bias="0.004" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgProfile"
             android:layout_width="139dp"
             android:layout_height="141dp"
             android:background="@drawable/rounded_profil"
             android:clipToOutline="true"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/awa"
+            android:src="@drawable/account_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

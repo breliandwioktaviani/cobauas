@@ -57,9 +57,10 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/Logout"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/settings" />
+                app:srcCompat="@drawable/logout" />
         </LinearLayout>
 
         <TextView
@@ -70,7 +71,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@android:color/white"
             android:lineSpacingExtra="2dp"
-            android:text="Selamat datang\nhati-hati ya... Soalnya aplikasi ini bisa bikin kamu nyaman dan susah move on~"
+            android:text="Selamat datang\nTambahkan jadwal kendaraanmu ya,supaya aku bisa ngingetin jadwalnya ke kamu ~"
             android:textSize="14sp" />
     </RelativeLayout>
 

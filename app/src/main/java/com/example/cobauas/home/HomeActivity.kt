@@ -35,7 +35,8 @@ class HomeActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.fragmentContainerView)
 
-
+        val welcomeUsername = findViewById<TextView>(R.id.tvName)
+        welcomeUsername.text = globalUsername
 
         val bundle = Bundle().apply {
             putString("username", globalUsername)

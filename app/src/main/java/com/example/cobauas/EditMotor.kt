@@ -5,8 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class EditMotor : AppCompatActivity() {
 
@@ -59,16 +62,27 @@ class EditMotor : AppCompatActivity() {
         }
     }
 
-    private fun showDatePicker(target: EditText) {
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
+    fun showDatePicker(targetEditText: EditText) {
+        val calendar = Calendar.getInstance()
 
-        val dp = DatePickerDialog(this, { _, y, m, d ->
-            target.setText("$d/${m+1}/$y")
-        }, year, month, day)
+        val datePicker = DatePickerDialog(
+            this,
+            { _, year, month, day ->
+                val cal = Calendar.getInstance()
+                cal.set(year, month, day)
 
-        dp.show()
+                val format = SimpleDateFormat("dd MMM yyyy", Locale("id", "ID"))
+                val dateString = format.format(cal.time)
+
+                targetEditText.setText(dateString)
+
+                Toast.makeText(this, "$dateString dipilih", Toast.LENGTH_SHORT).show()
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+
+        datePicker.show()
     }
 }

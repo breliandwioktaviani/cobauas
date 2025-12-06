@@ -90,7 +90,7 @@
                 android:layout_below="@id/userInfoLayout"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="2dp"
-                android:text="Selamat datang\nhati-hati ya... Soalnya aplikasi ini bisa bikin kamu nyaman dan susah move on~"
+                android:text="Selamat datang\nPantau Riwayat aktivitas anda demi kenyamanan anda"
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
         </RelativeLayout>

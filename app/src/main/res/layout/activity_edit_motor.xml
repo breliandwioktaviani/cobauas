@@ -70,7 +70,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@android:color/white"
             android:lineSpacingExtra="2dp"
-            android:text="Selamat datang\nhati-hati ya... Soalnya aplikasi ini bisa bikin kamu nyaman dan susah move on~"
+            android:text="Selamat datang\nJikad ada perubahan silakan diubah "
             android:textSize="14sp" />
     </RelativeLayout>
 

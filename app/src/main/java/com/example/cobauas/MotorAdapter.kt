@@ -86,7 +86,7 @@ class MotorAdapter(
                             intent.putExtra("nomor", motor.nomor)
                             intent.putExtra("terakhir", motor.terakhir)
                             intent.putExtra("selanjutnya", motor.selanjutnya)
-                            intent.putExtra("status", motor.status)
+                            intent.putExtra("catatan", motor.catatan)
                             holder.itemView.context.startActivity(intent)
                             true
                         }

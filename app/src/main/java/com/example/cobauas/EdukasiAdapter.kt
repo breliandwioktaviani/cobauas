@@ -32,6 +32,8 @@ class EdukasiAdapter(
         holder.buttonKlik.setOnClickListener{
             val context = holder.itemView.context
             val intent = Intent(context, EdukasiActivity::class.java)
+            intent.putExtra("judul", data.judul)
+            intent.putExtra("detail", data.detail)
             context.startActivity(intent)
         }
     }
