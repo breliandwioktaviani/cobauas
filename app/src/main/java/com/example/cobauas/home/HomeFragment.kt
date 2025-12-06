@@ -41,6 +41,25 @@ class HomeFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = adapter
 
+        val username = arguments?.getString("username")
+        val password = arguments?.getString("password")
+
+        val buttonProfilee = view.findViewById<ImageView>(R.id.imgProfile)
+        buttonProfilee.setOnClickListener {
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
+            intent.putExtra(Login.KEY_USERNAME, username)
+            intent.putExtra(Login.KEY_PASSWORD, password)
+            startActivity(intent)
+        }
+
+        val logout = view.findViewById<ImageView>(R.id.Logout)
+
+        logout.setOnClickListener {
+            val intent = Intent(requireContext(), Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
         adapter.onEditClick = { motor, pos ->
             val intent = Intent(requireContext(), EditMotor::class.java)
             intent.putExtra("position", pos)
@@ -53,12 +72,7 @@ class HomeFragment : Fragment() {
 
             startActivityForResult(intent, 2)
         }
-        val buttonLogout = view.findViewById<ImageView>(R.id.Logout)
-        buttonLogout.setOnClickListener {
-            val intent = Intent(requireContext(),Login::class.java)
-            startActivity(intent)
-        }
-
+        // Tombol Tambah
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
         btnTambah.setOnClickListener {
             val intent = Intent(requireContext(), Tambahriwayat::class.java)
