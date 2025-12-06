@@ -58,7 +58,7 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(),Login::class.java)
             startActivity(intent)
         }
-        // Tombol Tambah
+
         val btnTambah = view.findViewById<ImageView>(R.id.fabAdd)
         btnTambah.setOnClickListener {
             val intent = Intent(requireContext(), Tambahriwayat::class.java)
