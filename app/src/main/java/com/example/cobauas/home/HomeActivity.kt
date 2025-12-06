@@ -30,35 +30,38 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
         val buttonNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-        val username = intent.getStringExtra(Login.KEY_USERNAME)
-        val password = intent.getStringExtra(Login.KEY_PASSWORD)
+        globalUsername = intent.getStringExtra(Login.KEY_USERNAME)
+        globalPassword = intent.getStringExtra(Login.KEY_PASSWORD)
+
         val navController = findNavController(R.id.fragmentContainerView)
 
 
-        val bundle = Bundle()
-        bundle.putString("username",username)
-        bundle.putString("password",password)
 
-        navController.setGraph(R.navigation.nav_home,bundle)
+        val bundle = Bundle().apply {
+            putString("username", globalUsername)
+            putString("password", globalPassword)
+        }
+        navController.setGraph(R.navigation.nav_home, bundle)
 
-
+        // Bottom Nav
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNav.setupWithNavController(navController)
 
         val buttonProfile = findViewById<ImageView>(R.id.imgProfile)
 
         buttonProfile.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
-            intent.putExtra(Login.KEY_USERNAME,username)
-            intent.putExtra(Login.KEY_PASSWORD,password)
+            intent.putExtra(Login.KEY_USERNAME, globalUsername)
+            intent.putExtra(Login.KEY_PASSWORD, globalPassword)
             startActivity(intent)
         }
         buttonNavigationView.setupWithNavController(navController )
     }
 
-
     companion object {
-        val semuaMotor = mutableListOf<Motor>()
+        var globalUsername: String? = null
+        var globalPassword: String? = null
     }
-
 
 
 }

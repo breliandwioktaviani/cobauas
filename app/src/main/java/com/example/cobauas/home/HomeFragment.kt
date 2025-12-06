@@ -41,16 +41,17 @@ class HomeFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = adapter
 
-        val username = arguments?.getString("username")
-        val password = arguments?.getString("password")
 
         val buttonProfilee = view.findViewById<ImageView>(R.id.imgProfile)
-        buttonProfilee.setOnClickListener {
+        buttonProfilee?.setOnClickListener {
+            val username = HomeActivity.globalUsername
+            val password = HomeActivity.globalPassword
             val intent = Intent(requireContext(), ProfileActivity::class.java)
             intent.putExtra(Login.KEY_USERNAME, username)
             intent.putExtra(Login.KEY_PASSWORD, password)
             startActivity(intent)
         }
+
 
         val logout = view.findViewById<ImageView>(R.id.Logout)
 
